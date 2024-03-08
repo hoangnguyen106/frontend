@@ -125,9 +125,9 @@ body {
   text-align: center;
 }
 .section-header h2 {
-  color: #505866;
-  font-size: 24px;
-  font-weight: 500;
+  color: #33363b;
+  font-size: 38px;
+  font-weight: 700;
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
@@ -137,6 +137,7 @@ body {
 }
 .section-header p {
   font-size: 16px;
+  color: #f11b91;
 }
 /* section-header */
 .fix {
@@ -150,6 +151,9 @@ body {
 --------------------------------------*/
 .header-top {
   border-bottom: 1px solid #f6f8fa;
+}
+.header-top ul {
+  display: flex;
 }
 
 .header-top ul li {
@@ -212,6 +216,7 @@ nav.navbar.bootsnav {
 }
 
 /*.navbar-brand*/
+
 .navbar-header a.navbar-brand,
 .navbar-header a.navbar-brand:hover,
 .navbar-header a.navbar-brand:focus {
@@ -304,13 +309,14 @@ nav.navbar.bootsnav .navbar-toggle i {
 --------------------------------------*/
 .welcome-hero {
   position: relative;
-  background: url(../images/welcome-hero/banner.jpg) no-repeat;
+  background: url(../images/welcome-hero/massage.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
   height: 800px;
   z-index: 1;
 }
+
 .welcome-hero:before {
   position: absolute;
   content: " ";
@@ -321,18 +327,30 @@ nav.navbar.bootsnav .navbar-toggle i {
   background: rgba(65, 73, 89, 0.65);
   z-index: -1;
 }
+
+.hotline {
+  margin-left: 0 !important;
+  font-size: 30px;
+  color: #a4238f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  line-height: 1.4;
+}
+
 .welcome-hero-txt {
-  padding-top: 155px;
+  padding-top: 120px;
 }
 
 .welcome-hero-txt h2 {
-  font-size: 48px;
+  font-size: 30px;
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2.4px;
   line-height: 1.4;
 }
+
 .welcome-hero-txt p {
   font-size: 18px;
   color: #fcfcfc;
@@ -344,10 +362,10 @@ nav.navbar.bootsnav .navbar-toggle i {
   display: flex;
 }
 .welcome-hero-form {
-  display: flex;
+  /* display: flex; */
   background: #fff;
   height: 70px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   width: 85%;
 }
 .single-welcome-hero-form {
@@ -355,16 +373,37 @@ nav.navbar.bootsnav .navbar-toggle i {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 50%;
+  width: 100%;
   padding: 0 30px;
 }
-.single-welcome-hero-form:first-child {
-  border-right: 1px solid #edeff1;
+
+.welcome-hero-txt-bottom {
+  padding-top: 35px;
 }
+
+.welcome-hero-txt-bottom h2 {
+  font-size: 30px;
+  color: #a4238f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  line-height: 1.4;
+}
+
+.welcome-hero-txt-bottom p {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0e0e0e;
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+/* .single-welcome-hero-form:first-child {
+  border-right: 1px solid #edeff1;
+} */
 .single-welcome-hero-form input {
   margin-left: 10px;
   height: 70px;
-  width: 300px;
+  width: 100%;
   border: 0;
   background: transparent;
 }
@@ -373,6 +412,7 @@ nav.navbar.bootsnav .navbar-toggle i {
   color: #859098;
   text-transform: capitalize;
   font-weight: 500;
+  width: 100%;
 }
 .welcome-hero-form-icon {
   position: absolute;
@@ -565,7 +605,7 @@ nav.navbar.bootsnav .navbar-toggle i {
         7. Explore
 --------------------------------------*/
 .explore {
-  padding: 117px 0 95px;
+  padding: 30px 0 95px;
   background: #f8fafb;
 }
 .explore-content {
@@ -1157,4 +1197,86 @@ nav.navbar.bootsnav .navbar-toggle i {
   100% {
     bottom: 7px;
   }
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #81d4fa;
+  font-weight: bold;
+}
+
+.text-box {
+  margin-left: 44vw;
+  margin-top: 42vh;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: absolute;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Bản đồ */
+.bando {
+  width: 100%;
+  height: 600px;
 }

@@ -8,7 +8,5 @@ import { Product } from '../../models/product';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
 }
