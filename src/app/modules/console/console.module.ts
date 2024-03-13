@@ -8,7 +8,6 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { ClipboardModule } from 'ngx-clipboard';
-import { HuongdanComponent } from './components/huongdan/huongdan.component';
 import { GiaveComponent } from './components/giave/giave.component';
 import { LienheComponent } from './components/lienhe/lienhe.component';
 import { BandoComponent } from './components/bando/bando.component';
@@ -16,7 +15,14 @@ import { DanhsachnhanvienComponent } from './components/danhsachnhanvien/danhsac
 import { ChitietnhanvienComponent } from './components/chitietnhanvien/chitietnhanvien.component';
 
 @NgModule({
-  declarations: [HomeComponent, HuongdanComponent, GiaveComponent, LienheComponent, BandoComponent, DanhsachnhanvienComponent, ChitietnhanvienComponent],
+  declarations: [
+    HomeComponent,
+    GiaveComponent,
+    LienheComponent,
+    BandoComponent,
+    DanhsachnhanvienComponent,
+    ChitietnhanvienComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,

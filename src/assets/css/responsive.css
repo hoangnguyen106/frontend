@@ -40,6 +40,9 @@
 } /*max-width:1008px*/
 
 @media screen and (max-width: 992px) {
+  .container-nv {
+    margin: 50px 100px 50px 100px;
+  }
   nav.navbar.bootsnav .navbar-collapse.collapse.in {
     padding-bottom: 30px;
   }
@@ -80,7 +83,7 @@
 } /*max-width:768px*/
 
 @media screen and (max-width: 767px) {
-  .welcome-hero-txt h2 { 
+  .welcome-hero-txt h2 {
     font-size: 24px;
   }
   .single-welcome-hero {

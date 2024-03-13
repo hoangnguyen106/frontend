@@ -154,6 +154,7 @@ body {
 }
 .header-top ul {
   display: flex;
+  justify-content: space-between;
 }
 
 .header-top ul li {

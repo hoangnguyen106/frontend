@@ -1,7 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from '../core/components/main/main.component';
 import { HomeComponent } from './components/home/home.component';
-import { HuongdanComponent } from './components/huongdan/huongdan.component';
 import { GiaveComponent } from './components/giave/giave.component';
 import { LienheComponent } from './components/lienhe/lienhe.component';
 import { BandoComponent } from './components/bando/bando.component';
@@ -12,15 +11,10 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-
     children: [
       {
         path: 'home',
         component: HomeComponent,
-      },
-      {
-        path: 'huongdan',
-        component: HuongdanComponent,
       },
       {
         path: 'giave',
