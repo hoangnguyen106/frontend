@@ -13,6 +13,8 @@ import { LienheComponent } from './components/lienhe/lienhe.component';
 import { BandoComponent } from './components/bando/bando.component';
 import { DanhsachnhanvienComponent } from './components/danhsachnhanvien/danhsachnhanvien.component';
 import { ChitietnhanvienComponent } from './components/chitietnhanvien/chitietnhanvien.component';
+import { SharedModule } from '../shared/shared.module';
+import { ThanhtoanComponent } from './components/thanhtoan/thanhtoan.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ChitietnhanvienComponent } from './components/chitietnhanvien/chitietnh
     BandoComponent,
     DanhsachnhanvienComponent,
     ChitietnhanvienComponent,
+    ThanhtoanComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     ConsoleRoutes,
     CoreModule,
