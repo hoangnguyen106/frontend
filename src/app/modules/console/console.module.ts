@@ -15,6 +15,7 @@ import { DanhsachnhanvienComponent } from './components/danhsachnhanvien/danhsac
 import { ChitietnhanvienComponent } from './components/chitietnhanvien/chitietnhanvien.component';
 import { SharedModule } from '../shared/shared.module';
 import { ThanhtoanComponent } from './components/thanhtoan/thanhtoan.component';
+import { NhanvienService } from './services/nhanvien.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,6 @@ import { ThanhtoanComponent } from './components/thanhtoan/thanhtoan.component';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [RouterModule],
-  providers: [],
+  providers: [NhanvienService],
 })
 export class ConsoleModule {}
