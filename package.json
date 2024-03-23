@@ -23,6 +23,7 @@
     "ng-marquee": "^9.5.0",
     "ngx-clipboard": "^16.0.0",
     "ngx-image-zoom": "^2.1.0",
+    "react-facebook-login": "^4.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
