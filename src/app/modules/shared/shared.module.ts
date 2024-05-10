@@ -5,10 +5,15 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { RouterModule } from '@angular/router';
+import { ButtonSelectComponent } from './components/button-select/button-select.component';
 
 @NgModule({
-  declarations: [ProductCardComponent, BreadCrumbComponent],
+  declarations: [
+    ProductCardComponent,
+    BreadCrumbComponent,
+    ButtonSelectComponent,
+  ],
   imports: [CommonModule, RouterModule],
-  exports: [ProductCardComponent, BreadCrumbComponent],
+  exports: [ProductCardComponent, BreadCrumbComponent, ButtonSelectComponent],
 })
 export class SharedModule {}

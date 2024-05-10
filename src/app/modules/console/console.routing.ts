@@ -7,6 +7,7 @@ import { BandoComponent } from './components/bando/bando.component';
 import { DanhsachnhanvienComponent } from './components/danhsachnhanvien/danhsachnhanvien.component';
 import { ChitietnhanvienComponent } from './components/chitietnhanvien/chitietnhanvien.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -28,6 +29,7 @@ const routes: Routes = [
         path: 'bando',
         component: BandoComponent,
       },
+
       {
         path: 'danhsachnhanvien',
         children: [

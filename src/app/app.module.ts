@@ -12,10 +12,10 @@ import { AxiosService } from './axios.service';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule implements OnInit { 
+export class AppModule implements OnInit {
   constructor(private axiosService: AxiosService) { }
 
   ngOnInit() {
-    this.axiosService.setupAxios(); 
+    this.axiosService.setupAxios();
   }
 }
