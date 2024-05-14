@@ -1,38 +1,118 @@
-<div class="container-nv">
-  <div class="images" style="width: 100%">
-    <img
-      src="http://mistillas.cl/wp-content/uploads/2018/04/Nike-Epic-React-Flyknit-%E2%80%9CPearl-Pink%E2%80%9D-01.jpg"
-    />
-  </div>
-  <div class="slideshow-buttons">
-    <div class="one"></div>
-    <div class="two"></div>
-    <div class="three"></div>
-    <div class="four"></div>
-  </div>
-  <p class="pick">choose size</p>
-  <div class="sizes">
-    <div class="size">5</div>
-    <div class="size">6</div>
-    <div class="size">7</div>
-    <div class="size">8</div>
-    <div class="size">9</div>
-    <div class="size">10</div>
-    <div class="size">11</div>
-    <div class="size">12</div>
-  </div>
-  <div class="product">
-    <p>Women's Running Shoe</p>
-    <h1>Nike Epic React Flyknit</h1>
-    <h2>$150</h2>
-    <p class="desc">
-      The Nike Epic React Flyknit foam cushioning is responsive yet
-      light-weight, durable yet soft. This creates a sensation that not only
-      enhances the feeling of moving forward, but makes running feel fun, too.
-    </p>
-    <div class="buttons">
-      <button class="add">Add to Cart</button>
-      <button class="like"><span>♥</span></button>
+<app-bread-crumb [title]="title"></app-bread-crumb>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1">
+                <img
+                  src="https://img.lovepik.com/element/40078/8275.png_860.png"
+                />
+              </div>
+              <div class="tab-pane" id="pic-2">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsC4dwFFRFCXk6-JAEkfbUCtH3v_4crdX7Fh9VGQW2vIQPPAZjVkKSUz6aKtU1EcbfMMI&usqp=CAU"
+                />
+              </div>
+              <div class="tab-pane" id="pic-3">
+                <img
+                  src="https://img.lovepik.com/free-png/20211111/lovepik-god-of-wealth-png-image_400839954_wh1200.png"
+                />
+              </div>
+              <div class="tab-pane" id="pic-4">
+                <img
+                  src="https://img.lovepik.com/original_origin_pic/18/09/15/8af020097c19a3f6edf281e5681d171d.png_wh860.png"
+                />
+              </div>
+              <div class="tab-pane" id="pic-5">
+                <img
+                  src="https://img.lovepik.com/element/40078/8275.png_860.png"
+                />
+              </div>
+            </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li class="active">
+                <a data-target="#pic-1" data-toggle="tab"
+                  ><img
+                    src="https://img.lovepik.com/element/40078/8275.png_860.png"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-2" data-toggle="tab"
+                  ><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsC4dwFFRFCXk6-JAEkfbUCtH3v_4crdX7Fh9VGQW2vIQPPAZjVkKSUz6aKtU1EcbfMMI&usqp=CAU"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-3" data-toggle="tab"
+                  ><img
+                    src="https://img.lovepik.com/free-png/20211111/lovepik-god-of-wealth-png-image_400839954_wh1200.png"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-4" data-toggle="tab"
+                  ><img
+                    src="https://img.lovepik.com/original_origin_pic/18/09/15/8af020097c19a3f6edf281e5681d171d.png_wh860.png"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-5" data-toggle="tab"
+                  ><img
+                    src="https://img.lovepik.com/element/40078/8275.png_860.png"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="details col-md-6">
+            <h3 class="product-title">Massage Tận Nhà - Nhân Viên MS01</h3>
+            <div class="rating">
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <span class="review-no">41 reviews</span>
+            </div>
+            <h4 class="price">Giá vé: <span>$180</span></h4>
+            <p class="product-description">
+              Freeship - Giá trọn gói (đã bao gồm tips) vui lòng chỉ thanh toán
+              đúng giá vé
+            </p>
+            <h5 class="sizes">
+              Không gian yên tĩnh: <span>Yên lặng không làm phiền</span>
+            </h5>
+            <h4 class="price">Loại hình: <span>Massage body</span></h4>
+
+            <h5 class="sizes">
+              Thời gian:
+              <span class="size" data-toggle="tooltip" title="small"
+                >60 phút</span
+              >
+              <span class="size" data-toggle="tooltip" title="medium"
+                >90 phút</span
+              >
+              <span class="size" data-toggle="tooltip" title="large"
+                >120 phút</span
+              >
+              <!-- <span class="size" data-toggle="tooltip" title="xtra large"
+                >xl</span
+              > -->
+            </h5>
+
+            <div class="action">
+              <a routerLink="/console/dathang">
+                <button class="add-to-cart btn btn-default" type="button">
+                  ĐẶT NGAY
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./chitietnhanvien.component.scss']
 })
 export class ChitietnhanvienComponent {
-
+title = 'Chi tiết nhân viên'
 }

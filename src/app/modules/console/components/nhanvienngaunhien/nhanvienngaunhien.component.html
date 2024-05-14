@@ -1,1 +1,115 @@
-<p>nhanvienngaunhien works!</p>
+<app-bread-crumb [title]="title"></app-bread-crumb>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1">
+                <img src="http://placekitten.com/400/252" />
+              </div>
+              <div class="tab-pane" id="pic-2">
+                <img src="http://placekitten.com/400/252" />
+              </div>
+              <div class="tab-pane" id="pic-3">
+                <img src="http://placekitten.com/400/252" />
+              </div>
+              <div class="tab-pane" id="pic-4">
+                <img src="http://placekitten.com/400/252" />
+              </div>
+              <div class="tab-pane" id="pic-5">
+                <img src="http://placekitten.com/400/252" />
+              </div>
+            </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li class="active">
+                <a data-target="#pic-1" data-toggle="tab"
+                  ><img src="http://placekitten.com/200/126"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-2" data-toggle="tab"
+                  ><img src="http://placekitten.com/200/126"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-3" data-toggle="tab"
+                  ><img src="http://placekitten.com/200/126"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-4" data-toggle="tab"
+                  ><img src="http://placekitten.com/200/126"
+                /></a>
+              </li>
+              <li>
+                <a data-target="#pic-5" data-toggle="tab"
+                  ><img src="http://placekitten.com/200/126"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="details col-md-6">
+            <h3 class="product-title">Massage Tận Nhà - Vé Ngẫu Nhiên</h3>
+            <div class="rating">
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <span class="review-no">41 reviews</span>
+            </div>
+            <h4 class="price">Giá vé: <span>$180</span></h4>
+            <p class="product-description">
+              Freeship - Giá trọn gói (đã bao gồm tips) vui lòng chỉ thanh toán
+              đúng giá vé
+            </p>
+            <h5 class="sizes">
+              Không gian yên tĩnh: <span>Yên lặng không làm phiền</span>
+            </h5>
+            <h4 class="price">Loại hình: <span>Massage body</span></h4>
+
+            <h5 class="sizes">
+              Thời gian:
+              <span class="size" data-toggle="tooltip" title="small"
+                >60 phút</span
+              >
+              <span class="size" data-toggle="tooltip" title="medium"
+                >90 phút</span
+              >
+              <span class="size" data-toggle="tooltip" title="large"
+                >120 phút</span
+              >
+              <!-- <span class="size" data-toggle="tooltip" title="xtra large"
+                >xl</span
+              > -->
+            </h5>
+
+            <div data-mdb-input-init class="form-outline" style="width: 6rem">
+              <input
+                min="1"
+                max="20"
+                type="number"
+                id="typeNumber"
+                class="form-control"
+                [defaultValue]="0"
+              />
+              <label class="form-label" for="typeNumber"
+                >Số lượng nhân viên</label
+              >
+            </div>
+
+            <div class="action">
+              <button class="add-to-cart btn btn-default" type="button">
+                ĐẶT NGAY
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

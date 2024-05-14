@@ -6,6 +6,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { RouterModule } from '@angular/router';
 import { ButtonSelectComponent } from './components/button-select/button-select.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,11 @@ import { ButtonSelectComponent } from './components/button-select/button-select.
     ButtonSelectComponent,
   ],
   imports: [CommonModule, RouterModule],
-  exports: [ProductCardComponent, BreadCrumbComponent, ButtonSelectComponent],
+  exports: [
+    ProductCardComponent,
+    BreadCrumbComponent,
+    ButtonSelectComponent,
+    TranslateModule,
+  ],
 })
 export class SharedModule {}

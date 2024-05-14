@@ -17,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ThanhtoanComponent } from './components/thanhtoan/thanhtoan.component';
 import { NhanvienService } from './services/nhanvien.service';
 import { NhanvienngaunhienComponent } from './components/nhanvienngaunhien/nhanvienngaunhien.component';
+import { DathangComponent } from './components/dathang/dathang.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NhanvienngaunhienComponent } from './components/nhanvienngaunhien/nhanv
     ChitietnhanvienComponent,
     ThanhtoanComponent,
     NhanvienngaunhienComponent,
+    DathangComponent,
   ],
   imports: [
     CommonModule,

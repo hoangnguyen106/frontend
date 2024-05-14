@@ -6,7 +6,8 @@ import { LienheComponent } from './components/lienhe/lienhe.component';
 import { BandoComponent } from './components/bando/bando.component';
 import { DanhsachnhanvienComponent } from './components/danhsachnhanvien/danhsachnhanvien.component';
 import { ChitietnhanvienComponent } from './components/chitietnhanvien/chitietnhanvien.component';
-
+import { NhanvienngaunhienComponent } from './components/nhanvienngaunhien/nhanvienngaunhien.component';
+import { DathangComponent } from './components/dathang/dathang.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
         path: 'bando',
         component: BandoComponent,
       },
+      {
+        path: 'nhanvienngaunhien',
+        component: NhanvienngaunhienComponent,
+      },
 
       {
         path: 'danhsachnhanvien',
@@ -44,6 +49,10 @@ const routes: Routes = [
         ],
       },
     ],
+  },
+  {
+    path: 'dathang',
+    component: DathangComponent,
   },
 ];
 
