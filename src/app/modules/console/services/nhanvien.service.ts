@@ -11,4 +11,12 @@ export class NhanvienService {
   getAllNhanVien() {
     return this.http.get<[]>(`${nhanvienUrl}`);
   }
+
+  getNhanVienById(id: any) {
+    return this.http.get<any>(`${nhanvienUrl}/${id}`);
+  }
+
+  findByIdAndUpdateNhanVien(id: any){
+    return this.http.get<any>(`${nhanvienUrl}/${id}`);
+  }
 }
