@@ -32,15 +32,25 @@ export class ChitietnhanvienComponent implements OnInit {
         this.singlePageNhanVien = res;
         console.log('singleproduct', res);
         if (this.selectedTimeService === '60 phút') {
-          res.priceTicket = 300000;
-          res.timeService = this.selectedTimeService;
-        } else if (this.selectedTimeService === '90 phút') {
           res.priceTicket = 400000;
           res.timeService = this.selectedTimeService;
+        } else if (this.selectedTimeService === '90 phút') {
+          res.priceTicket = 450000;
+          res.timeService = this.selectedTimeService;
         } else if (this.selectedTimeService === '120 phút') {
-          res.priceTicket = 500000;
+          res.priceTicket = 550000;
           res.timeService = this.selectedTimeService;
         }
+
+        localStorage.setItem(
+          'donhang',
+          JSON.stringify({
+            employeeCode: res.employeeCode,
+            timeService: res.timeService,
+            priceTicket: res.priceTicket,
+            count: res.count,
+          })
+        );
 
         // this.addToCart.patchValue({
         //   productId: this.singlePageProduct._id,
@@ -49,7 +59,6 @@ export class ChitietnhanvienComponent implements OnInit {
       },
     });
   }
-
 
   onSubmit() {}
 }

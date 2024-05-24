@@ -62,7 +62,13 @@
               </div>
               <span class="review-no">41 reviews</span>
             </div>
-            <h4 class="price">Giá vé: <span>$180</span></h4>
+            <h4 class="price">
+              Giá vé:
+
+              <span *ngIf="nhanVienNgauNhien.priceTicket !== null"
+                >{{ nhanVienNgauNhien.priceTicket | number : "1.0-3" }}vnđ</span
+              >
+            </h4>
             <p class="product-description">
               Freeship - Giá trọn gói (đã bao gồm tips) vui lòng chỉ thanh toán
               đúng giá vé
@@ -74,15 +80,15 @@
 
             <h5 class="sizes">
               Thời gian:
-              <span class="size" data-toggle="tooltip" title="small"
-                >60 phút</span
+              <select
+                id="timeService"
+                [(ngModel)]="selectedTimeService"
+                (change)="loadNhanVienNgauNhien()"
               >
-              <span class="size" data-toggle="tooltip" title="medium"
-                >90 phút</span
-              >
-              <span class="size" data-toggle="tooltip" title="large"
-                >120 phút</span
-              >
+                <option value="60 phút">60 phút</option>
+                <option value="90 phút">90 phút</option>
+                <option value="120 phút">120 phút</option>
+              </select>
               <!-- <span class="size" data-toggle="tooltip" title="xtra large"
                 >xl</span
               > -->
@@ -96,16 +102,17 @@
                 id="typeNumber"
                 class="form-control"
                 [defaultValue]="0"
+                [(ngModel)]="selectedQuantity"
+                (change)="loadNhanVienNgauNhien()"
               />
-              <label class="form-label" for="typeNumber"
-                >Số lượng nhân viên</label
-              >
             </div>
-
+            <br />
             <div class="action">
-              <button class="add-to-cart btn btn-default" type="button">
-                ĐẶT NGAY
-              </button>
+              <a routerLink="/console/dathang">
+                <button class="add-to-cart btn btn-default" type="submit">
+                  ĐẶT NGAY
+                </button>
+              </a>
             </div>
           </div>
         </div>

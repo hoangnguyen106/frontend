@@ -3,23 +3,27 @@
 <div class="container">
   <div class="row">
     <div class="col-75">
-      <form action="/action_page.php" (ngSubmit)="dathang()">
+      <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-50">
-            <h3>Billing Address</h3>
+            <h3>Thông tin đặt hàng</h3>
             <label for="fname"><i class="fa fa-user"></i> Họ tên</label>
             <input
               type="text"
               id="fname"
               name="firstname"
               placeholder="John M. Doe"
+              formControlName="customerName"
             />
-            <label for="phone"><i class="fa fa-phone"></i> Số điện thoại</label>
+            <label for="phoneNumber"
+              ><i class="fa fa-phone"></i> Số điện thoại</label
+            >
             <input
               type="text"
-              id="phone"
-              name="phone"
-              placeholder="0935015304"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="0935053171"
+              formControlName="phoneNumber"
             />
             <label for="adr"
               ><i class="fa fa-address-card-o"></i> Địa chỉ</label
@@ -29,13 +33,59 @@
               id="adr"
               name="address"
               placeholder="542 W. 15th Street"
+              formControlName="address"
             />
-            <label for="note"><i class="fa fa-institution"></i> Ghi chú</label>
+            <label for="adr"
+              ><i class="fa fa-address-card-o"></i> Giá gói vé</label
+            >
             <input
               type="text"
-              id="note"
-              name="note"
-              placeholder="Nhập vào lưu ý"
+              id="adr"
+              name="address"
+              placeholder="542 W. 15th Street"
+              value="{{ item.priceTicket }}"
+              disabled
+            />
+            <label for="adr"
+              ><i class="fa fa-address-card-o"></i> Thời gian</label
+            >
+            <input
+              type="text"
+              id="adr"
+              name="address"
+              value="{{ item.timeService }}"
+              disabled
+            />
+            <label for="adr"
+              ><i class="fa fa-address-card-o"></i> Mã số nhân viên</label
+            >
+            <input
+              type="text"
+              id="adr"
+              name="address"
+              value="{{ item.employeeCode }}"
+              disabled
+            />
+
+            <label for="adr"
+              ><i class="fa fa-address-card-o"></i> Loại vé</label
+            >
+            <input
+              type="text"
+              id="adr"
+              name="address"
+              value="{{ item.ticketType }}"
+              disabled
+            />
+            <label for="adr"
+              ><i class="fa fa-address-card-o"></i> Hình ảnh</label
+            >
+            <input
+              name="picture"
+              placeholder="542 W. 15th Street"
+              id="picture"
+              formControlName="picture"
+              type="text"
             />
           </div>
         </div>
@@ -43,26 +93,34 @@
           Chỉ thanh toán trực tiếp với nhân viên khi nhân viên đã đến nơi.
           (Không chuyển khoản trước khi nhân viên đến)
         </label>
+
         <input type="submit" value="ĐẶT MASSAGE" class="btn" />
       </form>
     </div>
 
     <div class="col-25" style="border: 1px solid lightgrey">
       <h4>
-        Cart
+        Thông tin đơn hàng
         <span class="price" style="color: black">
           <i class="fa fa-shopping-cart"></i>
-          <b>4</b>
         </span>
       </h4>
-      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <p>
+        <a href="#">Giá tiền</a>
+        <span class="price">{{ item.priceTicket | number : "1.0-3" }}</span>
+      </p>
+      <p>
+        <a href="#">Số lượng</a> <span class="price">{{ item.count }}</span>
+      </p>
       <hr />
       <label> Vé đã bao gồm tip + phí di chuyển </label>
       <p>
-        Total <span class="price" style="color: black"><b>$30</b></span>
+        Tổng tiền
+        <span class="price" style="color: black"
+          ><b
+            >{{ item.priceTicket * item.count | number : "1.0-3" }}vnđ</b
+          ></span
+        >
       </p>
     </div>
   </div>
