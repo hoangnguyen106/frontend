@@ -11,9 +11,6 @@ import { NhanvienService } from '../../services/nhanvien.service';
 })
 export class DathangComponent implements OnInit {
   title = 'Đặt nhân viên';
-  private BOT_TOKEN = '7066531105:AAHKEd7UaVbBcbfssTyQpMHA5fwb03E3dWI';
-  private BASE_URL = `https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`;
-  private CHAT_ID = '-4243555077';
   item = JSON.parse(localStorage.getItem('donhang') || '{}');
   notificationForm: FormGroup;
 
@@ -24,13 +21,20 @@ export class DathangComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.notificationForm = this.fb.group({
-      customerName: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      customerName: ['', [Validators.required]],
+      phoneNumber: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/(0[3|5|7|8|9])+([0-9]{8})\b/g),
+        ],
+      ],
       address: ['', Validators.required],
       priceTicket: this.item.priceTicket,
       timeService: this.item.timeService,
       employeeCode: this.item.employeeCode,
       ticketType: this.item.ticketType,
+      count: this.item.count,
       picture: [''],
     });
   }
@@ -43,7 +47,7 @@ export class DathangComponent implements OnInit {
   onSubmit() {
     const dataEmployee = {
       toObject: () => this.notificationForm.value,
-      ticketType: 'Vé chọn nhân viên',
+      ticketType: this.item.ticketType,
     };
 
     this.nhanVienService.sendNotification(dataEmployee).subscribe(
@@ -56,7 +60,7 @@ export class DathangComponent implements OnInit {
             );
             this.router.navigate(['/console/home']);
             console.log(res);
-          });
+          }); 
       },
       (error) => {
         console.error('Error sending message', error);

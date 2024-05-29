@@ -1,6 +1,6 @@
 <div *ngFor="let nhanvien of nhanviens" class="col-xs-12 col-sm-6 col-md-4">
   <!-- Card -->
-  <div class="card box">
+  <div class="card box" *ngIf="nhanvien.ticketType === 'Vé chọn nhân viên'">
     <!--Card image-->
     <div class="view overlay">
       <img

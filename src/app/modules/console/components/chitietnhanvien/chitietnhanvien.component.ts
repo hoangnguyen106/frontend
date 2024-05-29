@@ -49,6 +49,7 @@ export class ChitietnhanvienComponent implements OnInit {
             timeService: res.timeService,
             priceTicket: res.priceTicket,
             count: res.count,
+            ticketType: res.ticketType,
           })
         );
 

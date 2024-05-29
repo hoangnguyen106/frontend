@@ -37,7 +37,7 @@
 
 input[type="text"] {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -83,4 +83,19 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+}
+
+div {
+  > small {
+    color: red;
+  }
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
 }

@@ -5,9 +5,10 @@ import { CoreRoutes } from './core.routing';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [MainComponent, HeaderComponent, FooterComponent],
-  imports: [CommonModule, CoreRoutes],
+  imports: [CommonModule, CoreRoutes, ReactiveFormsModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [RouterModule],
 })

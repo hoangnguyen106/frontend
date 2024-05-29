@@ -7,6 +7,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
 import { RouterModule } from '@angular/router';
 import { ButtonSelectComponent } from './components/button-select/button-select.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
     BreadCrumbComponent,
     ButtonSelectComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   exports: [
     ProductCardComponent,
     BreadCrumbComponent,

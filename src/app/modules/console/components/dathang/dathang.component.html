@@ -7,14 +7,25 @@
         <div class="row">
           <div class="col-50">
             <h3>Thông tin đặt hàng</h3>
-            <label for="fname"><i class="fa fa-user"></i> Họ tên</label>
+            <label for="customerName"><i class="fa fa-user"></i> Họ tên</label>
             <input
               type="text"
               id="fname"
-              name="firstname"
+              name="customerName"
               placeholder="John M. Doe"
               formControlName="customerName"
             />
+            <div
+              *ngIf="
+                notificationForm.get('customerName')?.invalid &&
+                notificationForm.get('customerName')?.touched
+              "
+            >
+              <small
+                *ngIf="notificationForm.get('customerName')?.errors?.['required']"
+                >Customer name is required
+              </small>
+            </div>
             <label for="phoneNumber"
               ><i class="fa fa-phone"></i> Số điện thoại</label
             >
@@ -25,6 +36,22 @@
               placeholder="0935053171"
               formControlName="phoneNumber"
             />
+            <div
+              *ngIf="
+                notificationForm.get('phoneNumber')?.invalid &&
+                notificationForm.get('phoneNumber')?.touched
+              "
+            >
+              <small
+                *ngIf="notificationForm.get('phoneNumber')?.errors?.['required']"
+                >Phone number is required
+              </small>
+              <small
+                *ngIf="notificationForm.get('phoneNumber')?.errors?.['pattern']"
+              >
+                Please enter the correct phone number format
+              </small>
+            </div>
             <label for="adr"
               ><i class="fa fa-address-card-o"></i> Địa chỉ</label
             >
@@ -35,6 +62,17 @@
               placeholder="542 W. 15th Street"
               formControlName="address"
             />
+            <div
+              *ngIf="
+                notificationForm.get('address')?.invalid &&
+                notificationForm.get('address')?.touched
+              "
+            >
+              <small
+                *ngIf="notificationForm.get('address')?.errors?.['required']"
+                >Address is required
+              </small>
+            </div>
             <label for="adr"
               ><i class="fa fa-address-card-o"></i> Giá gói vé</label
             >
@@ -56,16 +94,18 @@
               value="{{ item.timeService }}"
               disabled
             />
-            <label for="adr"
-              ><i class="fa fa-address-card-o"></i> Mã số nhân viên</label
-            >
-            <input
-              type="text"
-              id="adr"
-              name="address"
-              value="{{ item.employeeCode }}"
-              disabled
-            />
+            <div *ngIf="item.ticketType === 'Vé chọn nhân viên'">
+              <label for="adr"
+                ><i class="fa fa-address-card-o"></i> Mã số nhân viên</label
+              >
+              <input
+                type="text"
+                id="adr"
+                name="address"
+                value="{{ item.employeeCode }}"
+                disabled
+              />
+            </div>
 
             <label for="adr"
               ><i class="fa fa-address-card-o"></i> Loại vé</label
@@ -77,16 +117,18 @@
               value="{{ item.ticketType }}"
               disabled
             />
-            <label for="adr"
-              ><i class="fa fa-address-card-o"></i> Hình ảnh</label
-            >
-            <input
-              name="picture"
-              placeholder="542 W. 15th Street"
-              id="picture"
-              formControlName="picture"
-              type="text"
-            />
+            <div *ngIf="item.ticketType === 'Vé chọn nhân viên'">
+              <label for="adr"
+                ><i class="fa fa-address-card-o"></i> Hình ảnh</label
+              >
+              <input
+                name="picture"
+                placeholder="542 W. 15th Street"
+                id="picture"
+                formControlName="picture"
+                type="text"
+              />
+            </div>
           </div>
         </div>
         <label>
@@ -94,7 +136,12 @@
           (Không chuyển khoản trước khi nhân viên đến)
         </label>
 
-        <input type="submit" value="ĐẶT MASSAGE" class="btn" />
+        <input
+          type="submit"
+          [disabled]="notificationForm.invalid"
+          value="ĐẶT MASSAGE"
+          class="btn"
+        />
       </form>
     </div>
 
