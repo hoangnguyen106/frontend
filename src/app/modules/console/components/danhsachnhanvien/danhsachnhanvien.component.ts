@@ -9,9 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class DanhsachnhanvienComponent implements OnInit {
   title = 'Danh sách nhân viên';
-  nhanvien: [] = [];
+  nhanvien: any = [];
 
-  constructor(private nhanvienService: NhanvienService) {}
+  constructor(private nhanvienService: NhanvienService) {
+
+  }
 
   ngOnInit(): void {
     this.loadNhanVien();
@@ -20,8 +22,10 @@ export class DanhsachnhanvienComponent implements OnInit {
   loadNhanVien() {
     this.nhanvienService.getAllNhanVien().subscribe((res) => {
       this.nhanvien = res;
-
-      console.log('res =====>', this.nhanvien);
+      
+      console.log('res =====>', this);
     });
   }
+
+  
 }

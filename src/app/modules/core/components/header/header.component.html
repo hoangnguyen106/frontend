@@ -3,24 +3,8 @@
   <ul>
     <li>
       <div class="header-top-left">
-        <ul>
-          <li class="select-opt">
-            <img
-              class="img-fluid"
-              width="50"
-              src="https://png.pngtree.com/png-vector/20210908/ourlarge/pngtree-vietnam-flag-png-with-transparent-background-png-image_3917574.jpg"
-              alt=""
-            />
-            <select name="language" id="language">
-              <option value="default">Việt Nam</option>
-              <option value="english">English</option>
-              <option value="korea">Korea</option>
-            </select>
-          </li>
-          <li class="select-opt">
-            <a href="#"><span class="lnr lnr-magnifier"></span></a>
-          </li>
-        </ul>
+
+        <app-translate-massage translate></app-translate-massage>
       </div>
     </li>
     <li class="head-responsive-right pull-right">
@@ -81,7 +65,7 @@
             data-in="fadeInDown"
             data-out="fadeOutUp"
           >
-            <li class="scroll active"><a routerLink="">Trang chủ</a></li>
+            <li class="scroll active"><a routerLink="">{{"home" | translate}}</a></li>
             <li class="scroll">
               <a routerLink="danhsachnhanvien">Nhân viên</a>
             </li>

@@ -6,62 +6,15 @@
         <div class="wrapper row">
           <div class="preview col-md-6">
             <div class="preview-pic tab-content">
-              <div class="tab-pane active" id="pic-1">
-                <img
-                  src="https://img.lovepik.com/element/40078/8275.png_860.png"
-                />
-              </div>
-              <div class="tab-pane" id="pic-2">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsC4dwFFRFCXk6-JAEkfbUCtH3v_4crdX7Fh9VGQW2vIQPPAZjVkKSUz6aKtU1EcbfMMI&usqp=CAU"
-                />
-              </div>
-              <div class="tab-pane" id="pic-3">
-                <img
-                  src="https://img.lovepik.com/free-png/20211111/lovepik-god-of-wealth-png-image_400839954_wh1200.png"
-                />
-              </div>
-              <div class="tab-pane" id="pic-4">
-                <img
-                  src="https://img.lovepik.com/original_origin_pic/18/09/15/8af020097c19a3f6edf281e5681d171d.png_wh860.png"
-                />
-              </div>
-              <div class="tab-pane" id="pic-5">
-                <img
-                  src="https://img.lovepik.com/element/40078/8275.png_860.png"
-                />
+              <div *ngFor="let pic of singlePageNhanVien.picture; let i = index" [class.tab-pane]="true" [class.active]="i === 0" [attr.id]="'pic-' + (i + 1)">
+                <img [src]="pic || 'https://img.lovepik.com/element/40078/8275.png_860.png'" alt="Image {{ i + 1 }}" />
               </div>
             </div>
             <ul class="preview-thumbnail nav nav-tabs">
-              <li class="active">
-                <a data-target="#pic-1" data-toggle="tab"
-                  ><img
-                    src="https://img.lovepik.com/element/40078/8275.png_860.png"
-                /></a>
-              </li>
-              <li>
-                <a data-target="#pic-2" data-toggle="tab"
-                  ><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsC4dwFFRFCXk6-JAEkfbUCtH3v_4crdX7Fh9VGQW2vIQPPAZjVkKSUz6aKtU1EcbfMMI&usqp=CAU"
-                /></a>
-              </li>
-              <li>
-                <a data-target="#pic-3" data-toggle="tab"
-                  ><img
-                    src="https://img.lovepik.com/free-png/20211111/lovepik-god-of-wealth-png-image_400839954_wh1200.png"
-                /></a>
-              </li>
-              <li>
-                <a data-target="#pic-4" data-toggle="tab"
-                  ><img
-                    src="https://img.lovepik.com/original_origin_pic/18/09/15/8af020097c19a3f6edf281e5681d171d.png_wh860.png"
-                /></a>
-              </li>
-              <li>
-                <a data-target="#pic-5" data-toggle="tab"
-                  ><img
-                    src="https://img.lovepik.com/element/40078/8275.png_860.png"
-                /></a>
+              <li *ngFor="let pic of singlePageNhanVien.picture; let i = index" [class.active]="i === 0">
+                <a [attr.data-target]="'#pic-' + (i + 1)" data-toggle="tab">
+                  <img [src]="pic || 'https://img.lovepik.com/element/40078/8275.png_860.png'" alt="Image {{ i + 1 }}" />
+                </a>
               </li>
             </ul>
           </div>

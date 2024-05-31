@@ -8,19 +8,22 @@ import { RouterModule } from '@angular/router';
 import { ButtonSelectComponent } from './components/button-select/button-select.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateMassageComponent } from './components/translate-massage/translate-massage.component';
 
 @NgModule({
   declarations: [
     ProductCardComponent,
     BreadCrumbComponent,
     ButtonSelectComponent,
+    TranslateMassageComponent
   ],
-  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule,TranslateModule],
   exports: [
     ProductCardComponent,
     BreadCrumbComponent,
     ButtonSelectComponent,
     TranslateModule,
+    TranslateMassageComponent
   ],
 })
 export class SharedModule {}

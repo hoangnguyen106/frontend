@@ -1,11 +1,11 @@
 <div *ngFor="let nhanvien of nhanviens" class="col-xs-12 col-sm-6 col-md-4">
   <!-- Card -->
-  <div class="card box" *ngIf="nhanvien.ticketType === 'Vé chọn nhân viên'">
+  <div class="card box" *ngIf="nhanvien.ticketType === 'EMPLOYEETICKETS'">
     <!--Card image-->
     <div class="view overlay">
       <img
         class="card-img-top"
-        src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+        [src]="nhanvien.picture[0] || 'https://mdbootstrap.com/img/Photos/Others/images/16.jpg'"
         alt="Card image cap"
       />
       <a href="#!">

@@ -36,7 +36,7 @@ import { DathangComponent } from './components/dathang/dathang.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule,
+    //SharedModule,
     ConsoleRoutes,
     CoreModule,
     NgxImageZoomModule,

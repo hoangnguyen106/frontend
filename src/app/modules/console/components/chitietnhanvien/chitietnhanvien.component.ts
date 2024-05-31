@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NhanvienService } from '../../services/nhanvien.service';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-chitietnhanvien',
@@ -12,13 +12,13 @@ export class ChitietnhanvienComponent implements OnInit {
   id: any;
   singlePageNhanVien: any;
   selectedTimeService: string = '60 phút';
-  nhanviens: [] = [];
+  nhanviens: any[] = [];
 
   constructor(
     private nhanVienService: NhanvienService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
+
   ngOnInit(): void {
     this.loadSinglePage();
   }
@@ -26,40 +26,30 @@ export class ChitietnhanvienComponent implements OnInit {
   loadSinglePage() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
+      this.updateNhanVienTime(this.id, { timeService: this.selectedTimeService });
     });
-    this.nhanVienService.findByIdAndUpdateNhanVien(this.id).subscribe({
-      next: (res) => {
-        this.singlePageNhanVien = res;
-        console.log('singleproduct', res);
-        if (this.selectedTimeService === '60 phút') {
-          res.priceTicket = 400000;
-          res.timeService = this.selectedTimeService;
-        } else if (this.selectedTimeService === '90 phút') {
-          res.priceTicket = 450000;
-          res.timeService = this.selectedTimeService;
-        } else if (this.selectedTimeService === '120 phút') {
-          res.priceTicket = 550000;
-          res.timeService = this.selectedTimeService;
-        }
+  }
 
+  updateNhanVienTime(id: string, timePayload: { timeService: string }) {
+    this.nhanVienService.findByIdAndUpdateNhanVien(id, timePayload).subscribe({
+      next: (res) => {
+         this.singlePageNhanVien = res;        
+        const { employeeCode, timeService, priceTicket, ticketType, count } = this.singlePageNhanVien;
         localStorage.setItem(
           'donhang',
           JSON.stringify({
-            employeeCode: res.employeeCode,
-            timeService: res.timeService,
-            priceTicket: res.priceTicket,
-            count: res.count,
-            ticketType: res.ticketType,
+            employeeCode,
+            timeService,
+            priceTicket,
+            ticketType,
+            count,
           })
         );
-
-        // this.addToCart.patchValue({
-        //   productId: this.singlePageProduct._id,
-        //   price: this.singlePageProduct.price,
-        // });
       },
     });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    // Implementation for form submission (if needed)
+  }
 }

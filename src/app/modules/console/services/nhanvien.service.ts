@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { nhanvienTime, nhanvienUrl, orderUrl } from '../../shared/utils/url';
+import { nhanvienRamdomUrl, nhanvienTime, nhanvienUrl, orderUrl } from '../../shared/utils/url';
 import { headers } from '../../shared/utils/token';
 import { Observable } from 'rxjs';
 import { get } from 'lodash';
@@ -17,20 +17,30 @@ export class NhanvienService {
   private BOT_TOKEN = '7066531105:AAHKEd7UaVbBcbfssTyQpMHA5fwb03E3dWI';
   private BASE_URL = `https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`;
   private CHAT_ID = '-4243555077';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+  }
 
   getAllNhanVien() {
     return this.http.get<[]>(`${nhanvienUrl}`);
+  }
+  getDataTranslate(lang:any) {
+    return this.http.get(`./assets/data/${lang}.json`);
+  }
+  getAllRamdomNhanVien() {
+    return this.http.get<[]>(`${nhanvienRamdomUrl}`);
   }
 
   getNhanVienById(id: any) {
     return this.http.get<any>(`${nhanvienUrl}/${id}`);
   }
 
-  findByIdAndUpdateNhanVien(id: any) {
-    return this.http.put<any>(`${nhanvienTime}/${id}`, headers);
+  findByIdAndUpdateNhanVien(id: any,payload:any) {
+ return this.http.put<any>(`${nhanvienTime}/${id}`, payload, { headers: headers });
   }
-
+  findByIdAndUpdateRandomNhanVien(key: any,payload:any) {
+    return this.http.put<any>(`${nhanvienRamdomUrl}/${key}`, payload, { headers: headers });
+     }
   getNhanVienByKeyword(data: any) {
     return this.http.get<any>(`${nhanvienUrl}?keyword=${data}`);
   }
