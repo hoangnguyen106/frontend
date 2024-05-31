@@ -1,4 +1,4 @@
-<app-bread-crumb [title]="title"></app-bread-crumb>
+<app-bread-crumb [title]="'randomEmployee' | translate"></app-bread-crumb>
 <body>
   <div class="container">
     <div class="card">
@@ -19,7 +19,7 @@
             </ul>
           </div>
           <div class="details col-md-6">
-            <h3 class="product-title">Massage Tận Nhà - Vé Ngẫu Nhiên</h3>
+            <h3 class="product-title">{{"ticketRandom" | translate}}</h3>
             <div class="rating">
               <div class="stars">
                 <span class="fa fa-star checked"></span>
@@ -31,31 +31,30 @@
               <span class="review-no">41 reviews</span>
             </div>
             <h4 class="price">
-              Giá vé:
+              {{"price" | translate}}:
 
               <span *ngIf="nhanVienNgauNhien.priceTicket !== null"
                 >{{ nhanVienNgauNhien.priceTicket | number : "1.0-3" }}vnđ</span
               >
             </h4>
             <p class="product-description">
-              Freeship - Giá trọn gói (đã bao gồm tips) vui lòng chỉ thanh toán
-              đúng giá vé
+              {{'contentEmployee' | translate}}
             </p>
             <h5 class="sizes">
-              Không gian yên tĩnh: <span>Yên lặng không làm phiền</span>
+              {{"serviceMassage1" | translate}}: <span>{{"serviceMassage2" | translate}}</span>
             </h5>
-            <h4 class="price">Loại hình: <span>Massage body</span></h4>
+            <h4 class="price">{{"type" | translate}}: <span>Massage body</span></h4>
 
             <h5 class="sizes">
-              Thời gian:
+              {{"time" | translate}}:
               <select
                 id="timeService"
                 [(ngModel)]="selectedTimeService"
                 (change)="loadNhanVienNgauNhien()"
               >
-                <option value="60 phút">60 phút</option>
-                <option value="90 phút">90 phút</option>
-                <option value="120 phút">120 phút</option>
+                <option value="60 phút">60 {{"minute" | translate}}</option>
+                <option value="90 phút">90 {{"minute" | translate}}</option>
+                <option value="120 phút">120 {{"minute" | translate}}</option>
               </select>
               <!-- <span class="size" data-toggle="tooltip" title="xtra large"
                 >xl</span
@@ -78,7 +77,7 @@
             <div class="action">
               <a routerLink="/console/dathang">
                 <button class="add-to-cart btn btn-default" type="submit">
-                  ĐẶT NGAY
+                  {{'BookNow' | translate}}
                 </button>
               </a>
             </div>
