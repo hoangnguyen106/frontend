@@ -18,6 +18,7 @@ import { ThanhtoanComponent } from './components/thanhtoan/thanhtoan.component';
 import { NhanvienService } from './services/nhanvien.service';
 import { NhanvienngaunhienComponent } from './components/nhanvienngaunhien/nhanvienngaunhien.component';
 import { DathangComponent } from './components/dathang/dathang.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DathangComponent } from './components/dathang/dathang.component';
     CoreModule,
     NgxImageZoomModule,
     ClipboardModule,
+    TranslateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [RouterModule],
