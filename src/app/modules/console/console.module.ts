@@ -37,7 +37,7 @@ import { TranslateModule } from '@ngx-translate/core';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    //SharedModule,
+    SharedModule,
     ConsoleRoutes,
     CoreModule,
     NgxImageZoomModule,
