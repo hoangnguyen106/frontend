@@ -11,6 +11,7 @@ export class ChitietnhanvienComponent implements OnInit {
   title = 'Chi tiết nhân viên';
   id: any;
   singlePageNhanVien: any;
+  count : any = 1;
   selectedTimeService: string = '60 phút';
   nhanviens: any[] = [];
 
@@ -26,15 +27,19 @@ export class ChitietnhanvienComponent implements OnInit {
   loadSinglePage() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
-      this.updateNhanVienTime(this.id, { timeService: this.selectedTimeService });
+      this.updateNhanVienTime(this.id, { timeService: this.selectedTimeService,count: this.count });
     });
   }
 
-  updateNhanVienTime(id: string, timePayload: { timeService: string }) {
+  updateNhanVienTime(id: string, timePayload: { timeService: string , count:any}) {
     this.nhanVienService.findByIdAndUpdateNhanVien(id, timePayload).subscribe({
       next: (res) => {
-         this.singlePageNhanVien = res;        
+         this.singlePageNhanVien = res;     
+         console.log(res);
+            
         const { employeeCode, timeService, priceTicket, ticketType, count } = this.singlePageNhanVien;
+        console.log(count);
+        
         localStorage.setItem(
           'donhang',
           JSON.stringify({

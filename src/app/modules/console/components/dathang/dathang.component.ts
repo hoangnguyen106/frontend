@@ -20,6 +20,8 @@ export class DathangComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder
   ) {
+    console.log(this.item);
+    
     this.notificationForm = this.fb.group({
       customerName: ['', [Validators.required]],
       phoneNumber: [
