@@ -11,8 +11,9 @@ import { NhanvienService } from '../../services/nhanvien.service';
 })
 export class DathangComponent implements OnInit {
   title = 'Đặt nhân viên';
-  item = JSON.parse(localStorage.getItem('donhang') || '{}');
+  item:any = JSON.parse(localStorage.getItem('donhang') || '{}');
   notificationForm: FormGroup;
+
 
   constructor(
     private nhanVienService: NhanvienService,
@@ -20,7 +21,6 @@ export class DathangComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder
   ) {
-    console.log(this.item);
     
     this.notificationForm = this.fb.group({
       customerName: ['', [Validators.required]],
@@ -32,41 +32,35 @@ export class DathangComponent implements OnInit {
         ],
       ],
       address: ['', Validators.required],
-      priceTicket: this.item.priceTicket,
-      timeService: this.item.timeService,
-      employeeCode: this.item.employeeCode,
-      ticketType: this.item.ticketType,
-      count: this.item.count,
-      picture: [''],
+      employeeId: this.item.employeeId,
     });
   }
 
   ngOnInit(): void {
-    console.log(this.item);
+    console.log(this.item,"hieu test");
   }
   dathang() {}
 
   onSubmit() {
-    const dataEmployee = {
-      toObject: () => this.notificationForm.value,
-      ticketType: this.item.ticketType,
-    };
-
-    this.nhanVienService.sendNotification(dataEmployee).subscribe(
+    if (this.notificationForm.valid) {
+      const dataEmployee = {
+        ...this.notificationForm.value, 
+        ticketType: this.item.ticketType,
+      };
+    
+    this.nhanVienService.postOrder(dataEmployee).subscribe(
       (response) => {
-        this.nhanVienService
-          .postOrder(this.notificationForm.value)
-          .subscribe((res) => {
+        console.log("response",dataEmployee);
+        
             this.toastrService.success(
               'Đặt hàng thành công, vui lòng để ý điên thoại'
             );
             this.router.navigate(['/console/home']);
-            console.log(res);
-          }); 
       },
       (error) => {
         console.error('Error sending message', error);
       }
     );
   }
+}
 }

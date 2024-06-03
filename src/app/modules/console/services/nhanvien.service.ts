@@ -49,52 +49,52 @@ export class NhanvienService {
     return this.http.post(`${orderUrl}`, data);
   }
 
-  sendNotification(dataEmployee: Employee): Observable<any> {
-    const notificationTelegram = {
-      providerType: 'TELEGRAM',
-      templateData: () => {
-        const pictures = `${get(dataEmployee.toObject(), 'picture', [])}\n`;
-        const customerInfo = `Thông tin khách hàng:\n- Họ và tên: ${get(
-          dataEmployee.toObject(),
-          'customerName'
-        )}\n- Số điện thoại: ${get(
-          dataEmployee.toObject(),
-          'phoneNumber'
-        )}\n- Địa chỉ: ${get(dataEmployee.toObject(), 'address')}\n`;
-        const commonInfo = `- Gía gói vé: ${get(
-          dataEmployee.toObject(),
-          'priceTicket',
-          ''
-        )}\n`;
-        const commonInfoTime = `- Thời gian: ${get(
-          dataEmployee.toObject(),
-          'timeService',
-          ''
-        )}`;
+//   sendNotification(dataEmployee: Employee): Observable<any> {
+//     const notificationTelegram = {
+//       providerType: 'TELEGRAM',
+//       templateData: () => {
+//         const pictures = `${get(dataEmployee.toObject(), 'picture', [])}\n`;
+//         const customerInfo = `Thông tin khách hàng:\n- Họ và tên: ${get(
+//           dataEmployee.toObject(),
+//           'customerName'
+//         )}\n- Số điện thoại: ${get(
+//           dataEmployee.toObject(),
+//           'phoneNumber'
+//         )}\n- Địa chỉ: ${get(dataEmployee.toObject(), 'address')}\n`;
+//         const commonInfo = `- Gía gói vé: ${get(
+//           dataEmployee.toObject(),
+//           'priceTicket',
+//           ''
+//         )}\n`;
+//         const commonInfoTime = `- Thời gian: ${get(
+//           dataEmployee.toObject(),
+//           'timeService',
+//           ''
+//         )}`;
 
-        const messageContent = `${pictures}Nhân viên có mã số ${get(
-          dataEmployee.toObject(),
-          'employeeCode',
-          ''
-        )} vừa được đặt thành công\n${customerInfo}${commonInfo}${commonInfoTime}`;
-        const messageContentNN = `${pictures}Nhân viên ngẫu nhiên vừa được đặt thành công\n${customerInfo}- Số lượng: ${get(
-          dataEmployee.toObject(),
-          'count',
-          ''
-        )}\n${commonInfo}${commonInfoTime}`;
-        const ticketTypes: any = {
-          'Vé chọn ngẫu nhiên': messageContentNN,
-          'Vé chọn nhân viên': messageContent,
-        };
-        return { messageContent: ticketTypes[dataEmployee.ticketType] };
-      },
-    };
+//         const messageContent = `${pictures}Nhân viên có mã số ${get(
+//           dataEmployee.toObject(),
+//           'employeeCode',
+//           ''
+//         )} vừa được đặt thành công\n${customerInfo}${commonInfo}${commonInfoTime}`;
+//         const messageContentNN = `${pictures}Nhân viên ngẫu nhiên vừa được đặt thành công\n${customerInfo}- Số lượng: ${get(
+//           dataEmployee.toObject(),
+//           'count',
+//           ''
+//         )}\n${commonInfo}${commonInfoTime}`;
+//         const ticketTypes: any = {
+//           'Vé chọn ngẫu nhiên': messageContentNN,
+//           'Vé chọn nhân viên': messageContent,
+//         };
+//         return { messageContent: ticketTypes[dataEmployee.ticketType] };
+//       },
+//     };
 
-    const messageContent = notificationTelegram.templateData().messageContent;
-    const params = new HttpParams()
-      .set('chat_id', this.CHAT_ID)
-      .set('text', messageContent);
+//     const messageContent = notificationTelegram.templateData().messageContent;
+//     const params = new HttpParams()
+//       .set('chat_id', this.CHAT_ID)
+//       .set('text', messageContent);
 
-    return this.http.get(this.BASE_URL, { params });
-  }
-}
+//     return this.http.get(this.BASE_URL, { params });
+//   }
+ }

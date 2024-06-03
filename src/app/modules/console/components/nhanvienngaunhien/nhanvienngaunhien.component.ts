@@ -45,15 +45,20 @@ export class NhanvienngaunhienComponent implements OnInit {
     this.nhanvienService.findByIdAndUpdateRandomNhanVien(key, timePayload).subscribe((res: any) => {
       this.nhanVienNgauNhien = res;
       const { employeeCode, timeService, priceTicket, ticketType, count } = res;
-
+      const dataTypeTickets:any = {
+        "RAMDOMTICKETS": "VÉ NGẪU NHIÊN",
+        "EMPLOYEETICKETS": "VÉ CHỌN NHÂN VIÊN"
+      }
       localStorage.setItem(
         'donhang',
         JSON.stringify({
           employeeCode,
           timeService,
           priceTicket,
+          typeTicket:dataTypeTickets[ticketType],
           ticketType,
           count,
+          employeeId: res._id
         })
       );
     });

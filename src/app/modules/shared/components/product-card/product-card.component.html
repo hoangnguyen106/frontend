@@ -20,7 +20,8 @@
         {{ nhanvien.employeeCode }} - {{"massage" | translate}}
       </h4>
       <!--Text-->
-      <p class="card-text" style="color: red">200.000đ</p>
+      <p class="card-text" style="color: red">{{ nhanvien.priceTicket| number : "1.0-3"
+      }}vnđ </p>
       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
       <button type="button" class="btn btn-light-blue btn-md">
         <a routerLink="/console/danhsachnhanvien/{{ nhanvien._id }}"

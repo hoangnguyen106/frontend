@@ -53,7 +53,7 @@
               </small>
             </div>
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> {{"phone" | translate}}</label
+              ><i class="fa fa-address-card-o"></i> {{"address" | translate}}</label
             >
             <input
               type="text"
@@ -94,7 +94,7 @@
               value="{{ item.timeService }}"
               disabled
             />
-            <div *ngIf="item.ticketType === 'Vé chọn nhân viên'">
+            <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
                 ><i class="fa fa-address-card-o"></i> Mã số nhân viên</label
               >
@@ -114,10 +114,10 @@
               type="text"
               id="adr"
               name="address"
-              value="{{ item.ticketType }}"
+              value="{{ item.typeTicket }}"
               disabled
             />
-            <div *ngIf="item.ticketType === 'Vé chọn nhân viên'">
+            <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
                 ><i class="fa fa-address-card-o"></i> Hình ảnh</label
               >

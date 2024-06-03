@@ -36,18 +36,23 @@ export class ChitietnhanvienComponent implements OnInit {
       next: (res) => {
          this.singlePageNhanVien = res;     
          console.log(res);
-            
+         
         const { employeeCode, timeService, priceTicket, ticketType, count } = this.singlePageNhanVien;
-        console.log(count);
-        
+       
+        const dataTypeTickets:any = {
+          "RAMDOMTICKETS": "VÉ NGẪU NHIÊN",
+          "EMPLOYEETICKETS": "VÉ CHỌN NHÂN VIÊN"
+        }
         localStorage.setItem(
           'donhang',
           JSON.stringify({
             employeeCode,
             timeService,
             priceTicket,
+            typeTicket:dataTypeTickets[ticketType],
             ticketType,
             count,
+            employeeId: this.singlePageNhanVien._id
           })
         );
       },
