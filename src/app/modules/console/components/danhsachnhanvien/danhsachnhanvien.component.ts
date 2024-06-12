@@ -22,8 +22,6 @@ export class DanhsachnhanvienComponent implements OnInit {
   loadNhanVien() {
     this.nhanvienService.getAllNhanVien().subscribe((res) => {
       this.nhanvien = res;
-      
-      console.log('res =====>', this);
     });
   }
 

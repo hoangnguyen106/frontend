@@ -4,11 +4,10 @@
   <div class="container">
     <div class="welcome-hero-txt">
       <h2>
-        Bạn ở đâu chúng tôi sẽ đến phục vụ bạn <br />Dù là nhà, khách sạn hay
-        căn hộ...
+        {{"content" | translate }} <br /> {{"content2" | translate}}
       </h2>
       <p>
-        Trải nghiệm dịch vụ massage tận nơi Đà Nẵng với nhiều ưu đãi hấp dẫn!
+        {{"content3" | translate }}      
       </p>
     </div>
     <!-- <div class="welcome-hero-serch-box">
@@ -28,7 +27,7 @@
 
     <div class="welcome-hero-txt-bottom">
       <h2>Massage TanNoi</h2>
-      <p>Dịch vụ Massage tận nơi Đà Nẵng</p>
+      <p>{{"content4" | translate}}</p>
     </div>
   </div>
 </section>
@@ -45,7 +44,7 @@
             <div class="single-list-topics-icon">
               <i class="flaticon-restaurant"></i>
             </div>
-            <h2><a routerLink="/console/home">Trang chủ</a></h2>
+            <h2><a routerLink="/console/home">{{"home" | translate}}</a></h2>
           </div>
         </li>
         <li>
@@ -53,7 +52,7 @@
             <div class="single-list-topics-icon">
               <i class="flaticon-travel"></i>
             </div>
-            <h2><a routerLink="/console/danhsachnhanvien">Nhân viên</a></h2>
+            <h2><a routerLink="/console/danhsachnhanvien">{{"employees" |translate}}</a></h2>
           </div>
         </li>
         <li>
@@ -61,7 +60,7 @@
             <div class="single-list-topics-icon">
               <i class="flaticon-building"></i>
             </div>
-            <h2><a routerLink="/console/giave">Giá vé</a></h2>
+            <h2><a routerLink="/console/giave">{{"ticket.price" |translate}}</a></h2>
           </div>
         </li>
         <li>
@@ -69,7 +68,7 @@
             <div class="single-list-topics-icon">
               <i class="flaticon-pills"></i>
             </div>
-            <h2><a routerLink="/console/lienhe">Liên hệ</a></h2>
+            <h2><a routerLink="/console/lienhe">{{"contact"|translate}}</a></h2>
           </div>
         </li>
         <li>
@@ -77,7 +76,7 @@
             <div class="single-list-topics-icon">
               <i class="flaticon-transport"></i>
             </div>
-            <h2><a routerLink="/console/vitri">Vị trí</a></h2>
+            <h2><a routerLink="/console/vitri">{{"map"|translate}}</a></h2>
           </div>
         </li>
       </ul>
@@ -170,10 +169,9 @@
 <section id="explore" class="explore">
   <div class="container">
     <div class="section-header">
-      <h2>Gói Massage Nhân Viên Ngẫu Nhiên</h2>
+      <h2>{{"employeeRandomTicket" | translate}}</h2>
       <p>
-        Gói Dịch Vụ Massage Tại Nhà, Khách Sạn Và Căn Hộ Lành Mạnh Chọn Nhân
-        Viên Ngẫu Nhiên
+        {{"contentEmployeeRandomTicket" | translate}}
       </p>
     </div>
     <!--/.section-header-->
@@ -185,7 +183,7 @@
         alt=""
       />
       <app-button-select
-        title="Đặt ngay"
+        [title]="'BookNow' | translate"
         linkNhanVien="/console/nhanvienngaunhien"
       ></app-button-select>
     </div>
@@ -195,10 +193,9 @@
 <section id="explore" class="explore">
   <div class="container">
     <div class="section-header">
-      <h2>Gói Massage Chọn Nhân Viên</h2>
+      <h2>{{"employeeTicket" |translate}}</h2>
       <p>
-        Dịch Vụ Massage Tại Nhà, Khách Sạn Và Căn Hộ Lành Mạnh Chọn Nhân Viên
-        Theo Yêu Cầu
+       {{"contentEmployeeTicket" | translate}}
       </p>
     </div>
     <!--/.section-header-->
@@ -210,7 +207,7 @@
         alt=""
       />
       <app-button-select
-        title="Chọn Nhân Viên"
+        [title]="'selectEmployee' |translate"
         linkNhanVien="/console/danhsachnhanvien"
       ></app-button-select>
     </div>

@@ -12,7 +12,7 @@ export class NhanvienngaunhienComponent implements OnInit {
   title = 'Nhân viên ngẫu nhiên';
   keyword = 'Vé chọn ngẫu nhiên';
   selectedTimeService: string = '60 phút';
-  selectedQuantity: number = 1;
+  count: any = 1;
   addToCart!: FormGroup;
   key: any = 'RAMDOMTICKETS';
   nhanVienNgauNhien: any;
@@ -37,22 +37,28 @@ export class NhanvienngaunhienComponent implements OnInit {
 
   loadNhanVienNgauNhien() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.updateNhanVienTime(this.key, { timeService: this.selectedTimeService });
+      this.updateNhanVienTime(this.key, { timeService: this.selectedTimeService, count: this.count });
     });
   }
 
-  updateNhanVienTime(key: string, timePayload: { timeService: string }) {
+  updateNhanVienTime(key: string, timePayload: { timeService: string, count: any }) {
     this.nhanvienService.findByIdAndUpdateRandomNhanVien(key, timePayload).subscribe((res: any) => {
       this.nhanVienNgauNhien = res;
       const { employeeCode, timeService, priceTicket, ticketType, count } = res;
+      const dataTypeTickets:any = {
+        "RAMDOMTICKETS": "VÉ NGẪU NHIÊN",
+        "EMPLOYEETICKETS": "VÉ CHỌN NHÂN VIÊN"
+      }
       localStorage.setItem(
         'donhang',
         JSON.stringify({
           employeeCode,
           timeService,
           priceTicket,
+          typeTicket:dataTypeTickets[ticketType],
           ticketType,
           count,
+          employeeId: res._id
         })
       );
     });

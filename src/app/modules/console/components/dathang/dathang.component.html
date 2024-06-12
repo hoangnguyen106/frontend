@@ -1,4 +1,4 @@
-<app-bread-crumb [title]="title"></app-bread-crumb>
+<app-bread-crumb [title]="'detailEmployee' | translate"></app-bread-crumb>
 
 <div class="container">
   <div class="row">
@@ -6,8 +6,8 @@
       <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-50">
-            <h3>Thông tin đặt hàng</h3>
-            <label for="customerName"><i class="fa fa-user"></i> Họ tên</label>
+            <h3>{{"infoBooking" | translate}}</h3>
+            <label for="customerName"><i class="fa fa-user"></i>{{"name" | translate}}</label>
             <input
               type="text"
               id="fname"
@@ -27,7 +27,7 @@
               </small>
             </div>
             <label for="phoneNumber"
-              ><i class="fa fa-phone"></i> Số điện thoại</label
+              ><i class="fa fa-phone"></i> {{"phone" | translate}}</label
             >
             <input
               type="text"
@@ -53,7 +53,7 @@
               </small>
             </div>
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> Địa chỉ</label
+              ><i class="fa fa-address-card-o"></i> {{"address" | translate}}</label
             >
             <input
               type="text"
@@ -74,7 +74,7 @@
               </small>
             </div>
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> Giá gói vé</label
+              ><i class="fa fa-address-card-o"></i>{{"pricePackage" | translate}}</label
             >
             <input
               type="text"
@@ -85,7 +85,7 @@
               disabled
             />
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> Thời gian</label
+              ><i class="fa fa-address-card-o"></i> {{"time"|translate}}</label
             >
             <input
               type="text"
@@ -94,7 +94,7 @@
               value="{{ item.timeService }}"
               disabled
             />
-            <div *ngIf="item.ticketType === 'Vé chọn nhân viên'">
+            <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
                 ><i class="fa fa-address-card-o"></i> Mã số nhân viên</label
               >
@@ -108,16 +108,16 @@
             </div>
 
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> Loại vé</label
+              ><i class="fa fa-address-card-o"></i> {{"typeTicket" | translate}}</label
             >
             <input
               type="text"
               id="adr"
               name="address"
-              value="{{ item.ticketType }}"
+              value="{{ item.typeTicket }}"
               disabled
             />
-            <div *ngIf="item.ticketType === 'Vé chọn nhân viên'">
+            <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
                 ><i class="fa fa-address-card-o"></i> Hình ảnh</label
               >
@@ -132,14 +132,13 @@
           </div>
         </div>
         <label>
-          Chỉ thanh toán trực tiếp với nhân viên khi nhân viên đã đến nơi.
-          (Không chuyển khoản trước khi nhân viên đến)
+          {{"pay" | translate}}
         </label>
 
         <input
           type="submit"
           [disabled]="notificationForm.invalid"
-          value="ĐẶT MASSAGE"
+          [value]="'bookMassage' | translate"
           class="btn"
         />
       </form>
@@ -147,22 +146,22 @@
 
     <div class="col-25" style="border: 1px solid lightgrey">
       <h4>
-        Thông tin đơn hàng
+        {{"infoBill" | translate}}
         <span class="price" style="color: black">
           <i class="fa fa-shopping-cart"></i>
         </span>
       </h4>
       <p>
-        <a href="#">Giá tiền</a>
+        <a href="#">{{"priceMoney" | translate}}</a>
         <span class="price">{{ item.priceTicket | number : "1.0-3" }}</span>
       </p>
       <p>
-        <a href="#">Số lượng</a> <span class="price">{{ item.count }}</span>
+        <a href="#">{{"count" | translate}}</a> <span class="price">{{ item.count }}</span>
       </p>
       <hr />
-      <label> Vé đã bao gồm tip + phí di chuyển </label>
+      <label> {{"tip" | translate}} </label>
       <p>
-        Tổng tiền
+        {{"sumMoney" | translate}}
         <span class="price" style="color: black"
           ><b
             >{{ item.priceTicket * item.count | number : "1.0-3" }}vnđ</b
