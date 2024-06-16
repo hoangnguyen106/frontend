@@ -6,8 +6,10 @@
       <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-50">
-            <h3>{{"infoBooking" | translate}}</h3>
-            <label for="customerName"><i class="fa fa-user"></i>{{"name" | translate}}</label>
+            <h3>{{ "infoBooking" | translate }}</h3>
+            <label for="customerName"
+              ><i class="fa fa-user"></i>{{ "name" | translate }}</label
+            >
             <input
               type="text"
               id="fname"
@@ -27,7 +29,7 @@
               </small>
             </div>
             <label for="phoneNumber"
-              ><i class="fa fa-phone"></i> {{"phone" | translate}}</label
+              ><i class="fa fa-phone"></i> {{ "phone" | translate }}</label
             >
             <input
               type="text"
@@ -53,7 +55,8 @@
               </small>
             </div>
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> {{"address" | translate}}</label
+              ><i class="fa fa-address-card-o"></i>
+              {{ "address" | translate }}</label
             >
             <input
               type="text"
@@ -74,7 +77,8 @@
               </small>
             </div>
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i>{{"pricePackage" | translate}}</label
+              ><i class="fa fa-address-card-o"></i
+              >{{ "pricePackage" | translate }}</label
             >
             <input
               type="text"
@@ -85,7 +89,8 @@
               disabled
             />
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> {{"time"|translate}}</label
+              ><i class="fa fa-address-card-o"></i>
+              {{ "time" | translate }}</label
             >
             <input
               type="text"
@@ -108,7 +113,8 @@
             </div>
 
             <label for="adr"
-              ><i class="fa fa-address-card-o"></i> {{"typeTicket" | translate}}</label
+              ><i class="fa fa-address-card-o"></i>
+              {{ "typeTicket" | translate }}</label
             >
             <input
               type="text"
@@ -121,18 +127,12 @@
               <label for="adr"
                 ><i class="fa fa-address-card-o"></i> Hình ảnh</label
               >
-              <input
-                name="picture"
-                placeholder="542 W. 15th Street"
-                id="picture"
-                formControlName="picture"
-                type="text"
-              />
+              <img src="{{ item.picture }}" alt="" />
             </div>
           </div>
         </div>
         <label>
-          {{"pay" | translate}}
+          {{ "pay" | translate }}
         </label>
 
         <input
@@ -146,22 +146,23 @@
 
     <div class="col-25" style="border: 1px solid lightgrey">
       <h4>
-        {{"infoBill" | translate}}
+        {{ "infoBill" | translate }}
         <span class="price" style="color: black">
           <i class="fa fa-shopping-cart"></i>
         </span>
       </h4>
       <p>
-        <a href="#">{{"priceMoney" | translate}}</a>
+        <a href="#">{{ "priceMoney" | translate }}</a>
         <span class="price">{{ item.priceTicket | number : "1.0-3" }}</span>
       </p>
       <p>
-        <a href="#">{{"count" | translate}}</a> <span class="price">{{ item.count }}</span>
+        <a href="#">{{ "count" | translate }}</a>
+        <span class="price">{{ item.count }}</span>
       </p>
       <hr />
-      <label> {{"tip" | translate}} </label>
+      <label> {{ "tip" | translate }} </label>
       <p>
-        {{"sumMoney" | translate}}
+        {{ "sumMoney" | translate }}
         <span class="price" style="color: black"
           ><b
             >{{ item.priceTicket * item.count | number : "1.0-3" }}vnđ</b

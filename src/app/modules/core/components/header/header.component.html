@@ -3,14 +3,13 @@
   <ul>
     <li>
       <div class="header-top-left">
-
         <app-translate-massage translate></app-translate-massage>
       </div>
     </li>
     <li class="head-responsive-right pull-right">
       <div class="header-top-right">
         <ul>
-          <li class="header-top-contact">+1 222 777 6565</li>
+          <li class="header-top-contact">0706276203</li>
           <!-- <li class="header-top-contact">
                 <a href="#">sign in</a>
               </li>
@@ -65,19 +64,27 @@
             data-in="fadeInDown"
             data-out="fadeOutUp"
           >
-            <li class="scroll active"><a routerLink="">{{"home" | translate}}</a></li>
-            <li class="scroll">
-              <a routerLink="danhsachnhanvien">{{"employees" |translate}}</a>
+            <li class="scroll active">
+              <a routerLink="">{{ "home" | translate }}</a>
             </li>
-            <li class="scroll"><a routerLink="giave">{{"ticket.price" |translate}}</a></li>
-            <li class="scroll"><a routerLink="lienhe">{{"contact"|translate}}</a></li>
-            <li class="scroll"><a routerLink="bando">{{"map"|translate}}</a></li>
+            <li class="scroll">
+              <a routerLink="danhsachnhanvien">{{ "employees" | translate }}</a>
+            </li>
+            <li class="scroll">
+              <a routerLink="giave">{{ "ticket.price" | translate }}</a>
+            </li>
+            <li class="scroll">
+              <a routerLink="lienhe">{{ "contact" | translate }}</a>
+            </li>
+            <li class="scroll">
+              <a routerLink="bando">{{ "map" | translate }}</a>
+            </li>
           </ul>
           <!--/.nav -->
         </div>
         <!-- /.navbar-collapse -->
       </div>
-      <!--/.container--> 
+      <!--/.container-->
     </nav>
     <!--/nav-->
     <!-- End Navigation -->
