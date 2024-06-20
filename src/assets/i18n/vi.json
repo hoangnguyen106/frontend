@@ -41,12 +41,13 @@
   "detailEmployee": "Chi tiết nhân viên",
   "bookEmployee": "Đặt nhân viên",
   "randomEmployee": "Nhân viên ngẫu nhiên",
-  "imageTicketRD": "../../../../../assets/images/priceTicket/RamdomVN.png",
-  "imageTicketSL": "../../../../../assets/images/priceTicket/SelectVN.png",
+  "imageTicketRD": "../../../../../assets/images/banner/RamdomVN.png",
+  "imageTicketSL": "../../../../../assets/images/banner/SelectVN.png",
   "titleImageRD": "Vé chọn ngẫu nhiên",
   "titleImageSL": "Vé chọn nhân viên",
   "logoTrans": "../../../../../assets/images/translate/vietnam.png",
-
+  "imgHomeRD": "../../../../../assets/images/banner/RamdomVN.png",
+  "imgHomeSL": "../../../../../assets/images/banner/SelectVN.png",
   "contactTitle": "Liên hệ",
   "contactUs": "Chúng tôi",
   "contactInfo": "THÔNG TIN LIÊN HỆ",
@@ -55,5 +56,10 @@
   "contactNo": "Số điện thoại",
   "contactMessage": "Nội dung",
   "contactCancel": "Hủy",
-  "contactSend": "Gửi"
+  "contactSend": "Gửi",
+  "valName": "Vui lòng nhập vào tên của bạn",
+  "valPhoneEmpty": "Vui lòng nhập vào số điện thoại của bạn",
+  "valPhoneInvalid": "Số điện thoại của bạn không đúng định dạng",
+  "valAddress": "Vui lòng nhập vào địa chỉ của bạn",
+  "languageCode": "vi"
 }

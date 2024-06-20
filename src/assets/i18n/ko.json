@@ -42,11 +42,13 @@
   "detailEmployee": "직원 세부사항",
   "bookEmployee": "직원 예약",
   "randomEmployee": "임의의 직원",
-  "imageTicketRD": "../../../../../assets/images/priceTicket/RamdomKorea.png",
-  "imageTicketSL": "../../../../../assets/images/priceTicket/SelectKorea.png",
+  "imageTicketRD": "../../../../../assets/images/banner/RamdomKorea.png",
+  "imageTicketSL": "../../../../../assets/images/banner/SelectKorea.png",
   "titleImageRD": "무작위로 선택된 티켓",
   "titleImageSL": "직원 선발 티켓",
   "logoTrans": "../../../../../assets/images/translate/korea.png",
+  "imgHomeRD": "../../../../../assets/images/banner/RamdomKorea.png",
+  "imgHomeSL": "../../../../../assets/images/banner/SelectKorea.png",
 
   "contactTitle": "연락하다",
   "contactUs": "우리를",
@@ -56,5 +58,11 @@
   "contactNo": "연락처",
   "contactMessage": "메시지",
   "contactCancel": "취소",
-  "contactSend": "보내다"
+  "contactSend": "보내다",
+
+  "valName": "당신의 이름을 입력 해주세요",
+  "valPhoneEmpty": "전화번호를 입력해주세요",
+  "valPhoneInvalid": "귀하의 전화번호 형식이 올바르지 않습니다.",
+  "valAddress": "주소를 입력해주세요",
+  "languageCode": "ko"
 }

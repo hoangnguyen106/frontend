@@ -41,11 +41,13 @@
   "detailEmployee": "Employee Details",
   "bookEmployee": "Book Employee",
   "randomEmployee": "Random Employee",
-  "imageTicketRD": "../../../../../assets/images/priceTicket/RamdomEL.png",
-  "imageTicketSL": "../../../../../assets/images/priceTicket/SelectEL.png",
+  "imageTicketRD": "../../../../../assets/images/banner/RamdomEL.png",
+  "imageTicketSL": "../../../../../assets/images/banner/SelectEL.png",
   "titleImageRD": "Tickets selected at random",
   "titleImageSL": "Employee selection ticket",
   "logoTrans": "../../../../../assets/images/translate/english.png",
+  "imgHomeRD": "../../../../../assets/images/banner/RamdomEL.png",
+  "imgHomeSL": "../../../../../assets/images/banner/SelectEL.png",
 
   "contactTitle": "Contact",
   "contactUs": "US",
@@ -55,5 +57,11 @@
   "contactNo": "Contact No",
   "contactMessage": "Message",
   "contactCancel": "Cancel",
-  "contactSend": "Send"
+  "contactSend": "Send",
+
+  "valName": "Please enter your name",
+  "valPhoneEmpty": "Please enter your phone number",
+  "valPhoneInvalid": "Your phone number is not in the correct format",
+  "valAddress": "Please enter your address",
+  "languageCode": "en"
 }

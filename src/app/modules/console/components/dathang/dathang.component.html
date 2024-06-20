@@ -25,7 +25,7 @@
             >
               <small
                 *ngIf="notificationForm.get('customerName')?.errors?.['required']"
-                >Customer name is required
+                >{{ "valName" | translate }}
               </small>
             </div>
             <label for="phoneNumber"
@@ -46,12 +46,12 @@
             >
               <small
                 *ngIf="notificationForm.get('phoneNumber')?.errors?.['required']"
-                >Phone number is required
+                >{{ "valPhoneEmpty" | translate }}
               </small>
               <small
                 *ngIf="notificationForm.get('phoneNumber')?.errors?.['pattern']"
               >
-                Please enter the correct phone number format
+                {{ "valPhoneInvalid" | translate }}
               </small>
             </div>
             <label for="adr"
@@ -73,7 +73,8 @@
             >
               <small
                 *ngIf="notificationForm.get('address')?.errors?.['required']"
-                >Address is required
+              >
+                {{ "valAddress" | translate }}
               </small>
             </div>
             <label for="adr"
