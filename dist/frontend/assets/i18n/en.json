@@ -63,5 +63,7 @@
   "valPhoneEmpty": "Please enter your phone number",
   "valPhoneInvalid": "Your phone number is not in the correct format",
   "valAddress": "Please enter your address",
-  "languageCode": "en"
+  "languageCode": "en",
+  "alertSucccess": "Order successful, please pay attention to your phone.",
+  "formImage": "Picture"
 }

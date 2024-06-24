@@ -126,9 +126,14 @@
             />
             <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
-                ><i class="fa fa-address-card-o"></i> Hình ảnh</label
+                ><i class="fa fa-address-card-o"></i
+                >{{ "formImage" | translate }}</label
               >
-              <img src="{{ item.picture }}" alt="" />
+              <img
+                style="height: 500px; object-fit: cover; width: 100%"
+                src="{{ item.picture }}"
+                alt=""
+              />
             </div>
           </div>
         </div>

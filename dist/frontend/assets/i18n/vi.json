@@ -61,5 +61,7 @@
   "valPhoneEmpty": "Vui lòng nhập vào số điện thoại của bạn",
   "valPhoneInvalid": "Số điện thoại của bạn không đúng định dạng",
   "valAddress": "Vui lòng nhập vào địa chỉ của bạn",
-  "languageCode": "vi"
+  "languageCode": "vi",
+  "alertSucccess": "Đặt hàng thành công, vui lòng để ý điện thoại của bạn.",
+  "formImage": "Hình ảnh"
 }

@@ -6,22 +6,42 @@
         <div class="wrapper row">
           <div class="preview col-md-6">
             <div class="preview-pic tab-content">
-              <div *ngFor="let pic of singlePageNhanVien?.picture; let i = index" [class.tab-pane]="true" [class.active]="i === 0" [attr.id]="'pic-' + (i + 1)">
-                <img [src]="pic || 'https://img.lovepik.com/element/40078/8275.png_860.png'" alt="Image {{ i + 1 }}" />
+              <div
+                *ngFor="let pic of singlePageNhanVien?.picture; let i = index"
+                [class.tab-pane]="true"
+                [class.active]="i === 0"
+                [attr.id]="'pic-' + (i + 1)"
+              >
+                <img
+                  style="height: 500px; object-fit: cover"
+                  [src]="
+                    pic ||
+                    'https://img.lovepik.com/element/40078/8275.png_860.png'
+                  "
+                  alt="Image {{ i + 1 }}"
+                />
               </div>
             </div>
             <ul class="preview-thumbnail nav nav-tabs">
-              <li *ngFor="let pic of singlePageNhanVien?.picture; let i = index" [class.active]="i === 0">
+              <li
+                *ngFor="let pic of singlePageNhanVien?.picture; let i = index"
+                [class.active]="i === 0"
+              >
                 <a [attr.data-target]="'#pic-' + (i + 1)" data-toggle="tab">
-                  <img [src]="pic || 'https://img.lovepik.com/element/40078/8275.png_860.png'" alt="Image {{ i + 1 }}" />
+                  <img
+                    [src]="
+                      pic ||
+                      'https://img.lovepik.com/element/40078/8275.png_860.png'
+                    "
+                    alt="Image {{ i + 1 }}"
+                  />
                 </a>
               </li>
             </ul>
-            
           </div>
           <div class="details col-md-6">
             <h3 class="product-title">
-              {{"ticket" | translate}} {{ singlePageNhanVien.employeeCode }}
+              {{ "ticket" | translate }} {{ singlePageNhanVien.employeeCode }}
             </h3>
             <div class="rating">
               <div class="stars">
@@ -34,7 +54,7 @@
               <span class="review-no">41 reviews</span>
             </div>
             <h4 class="price">
-              {{"price" | translate}}:
+              {{ "price" | translate }}:
 
               <span *ngIf="singlePageNhanVien.priceTicket !== null"
                 >{{
@@ -43,23 +63,26 @@
               >
             </h4>
             <p class="product-description">
-              {{'contentEmployee' | translate}}
+              {{ "contentEmployee" | translate }}
             </p>
             <h5 class="sizes">
-              {{"serviceMassage1" | translate}}: <span>{{"serviceMassage2" | translate}}</span>
+              {{ "serviceMassage1" | translate }}:
+              <span>{{ "serviceMassage2" | translate }}</span>
             </h5>
-            <h4 class="price">{{"type" | translate}}: <span>Massage body</span></h4>
+            <h4 class="price">
+              {{ "type" | translate }}: <span>Massage body</span>
+            </h4>
 
             <h5 class="sizes">
-              {{"time" | translate}}:
+              {{ "time" | translate }}:
               <select
                 id="timeService"
                 [(ngModel)]="selectedTimeService"
                 (change)="loadSinglePage()"
               >
-                <option value="60 phút">60 {{"minute" | translate}}</option>
-                <option value="90 phút">90 {{"minute" | translate}}</option>
-                <option value="120 phút">120 {{"minute" | translate}}</option>
+                <option value="60 phút">60 {{ "minute" | translate }}</option>
+                <option value="90 phút">90 {{ "minute" | translate }}</option>
+                <option value="120 phút">120 {{ "minute" | translate }}</option>
               </select>
               <!-- <span class="size" data-toggle="tooltip" title="xtra large"
                 >xl</span
@@ -69,7 +92,7 @@
             <div class="action">
               <a routerLink="/console/dathang">
                 <button class="add-to-cart btn btn-default" type="submit">
-                  {{ 'BookNow' | translate}}
+                  {{ "BookNow" | translate }}
                 </button>
               </a>
             </div>

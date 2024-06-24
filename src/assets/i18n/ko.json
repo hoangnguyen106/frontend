@@ -64,5 +64,7 @@
   "valPhoneEmpty": "전화번호를 입력해주세요",
   "valPhoneInvalid": "귀하의 전화번호 형식이 올바르지 않습니다.",
   "valAddress": "주소를 입력해주세요",
-  "languageCode": "ko"
+  "languageCode": "ko",
+  "alertSucccess": "주문이 완료되었습니다. 휴대전화에 주의하세요.",
+  "formImage": "영상"
 }

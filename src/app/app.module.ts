@@ -2,7 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http'; // Import HttpClientModule
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
@@ -19,7 +19,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    HttpClientModule, // Add HttpClientModule here
+    HttpClientModule,
+    BrowserAnimationsModule, // Add HttpClientModule here
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
