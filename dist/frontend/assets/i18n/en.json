@@ -65,5 +65,7 @@
   "valAddress": "Please enter your address",
   "languageCode": "en",
   "alertSucccess": "Order successful, please pay attention to your phone.",
-  "formImage": "Picture"
+  "formImage": "Picture",
+  "codeNV": "Employee number",
+  "item.typeTicket": "EMPLOYEE SELECTION TICKETS"
 }
