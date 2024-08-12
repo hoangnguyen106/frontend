@@ -63,7 +63,5 @@
   "valAddress": "Vui lòng nhập vào địa chỉ của bạn",
   "languageCode": "vi",
   "alertSucccess": "Đặt hàng thành công, vui lòng để ý điện thoại của bạn.",
-  "formImage": "Hình ảnh",
-  "codeNV": "Mã số nhân viên",
-  "item.typeTicket": "VÉ CHỌN NHÂN VIÊN"
+  "formImage": "Hình ảnh"
 }

@@ -66,7 +66,5 @@
   "valAddress": "주소를 입력해주세요",
   "languageCode": "ko",
   "alertSucccess": "주문이 완료되었습니다. 휴대전화에 주의하세요.",
-  "formImage": "영상",
-  "codeNV": "사원번호",
-  "item.typeTicket": "직원 선발 티켓"
+  "formImage": "영상"
 }

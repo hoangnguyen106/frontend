@@ -102,8 +102,7 @@
             />
             <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
-                ><i class="fa fa-address-card-o"></i
-                >{{ "codeNV" | translate }}</label
+                ><i class="fa fa-address-card-o"></i> Mã số nhân viên</label
               >
               <input
                 type="text"
@@ -114,19 +113,17 @@
               />
             </div>
 
-            <div *ngIf="item.typeTicket === 'VÉ CHỌN NHÂN VIÊN'">
-              <label for="adr"
-                ><i class="fa fa-address-card-o"></i>
-                {{ "typeTicket" | translate }}</label
-              >
-              <input
-                type="text"
-                id="adr"
-                name="address"
-                value="{{ 'item.typeTicket' | translate }}"
-                disabled
-              />
-            </div>
+            <label for="adr"
+              ><i class="fa fa-address-card-o"></i>
+              {{ "typeTicket" | translate }}</label
+            >
+            <input
+              type="text"
+              id="adr"
+              name="address"
+              value="{{ item.typeTicket }}"
+              disabled
+            />
             <div *ngIf="item.ticketType === 'EMPLOYEETICKETS'">
               <label for="adr"
                 ><i class="fa fa-address-card-o"></i
